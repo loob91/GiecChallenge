@@ -1,0 +1,8 @@
+{
+    "login" : "Log in",
+    "fillLogin" : "Please login to use the website",
+    "logout" : "Log out",
+    "emailPlaceholder" : "Enter your email",
+    "passwordPlaceholder" : "Enter your password",
+    "submit" : "Submit"
+}

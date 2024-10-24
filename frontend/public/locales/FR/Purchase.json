@@ -1,0 +1,11 @@
+{
+    "title" : "Créer une nouvelle liste d'achat",
+    "addNewProduct" : "Ajouter un produit",
+    "product" : "Produits",
+    "CO2Cost" : "Coût en CO2",
+    "WaterCost" : "Coût en eau",
+    "datePurchase" : "Date d'achat",
+    "submit" : "Valider",
+    "currency" : "Devise",
+    "back" : "Retour"
+}

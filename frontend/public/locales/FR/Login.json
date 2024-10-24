@@ -1,0 +1,8 @@
+{
+    "login" : "Connexion",
+    "fillLogin" : "Veuillez vous connecter pour accéder à l'application",
+    "logout" : "Deconnexion",
+    "emailPlaceholder" : "Saisissez votre email",
+    "passwordPlaceholder" : "Saisissez votre mot de passe",
+    "submit" : "Valider"
+}

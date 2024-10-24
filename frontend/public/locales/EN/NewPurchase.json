@@ -1,0 +1,12 @@
+{
+    "title" : "Create new purchase",
+    "typeOfPurchase" : "Type of purchase",
+    "manual" : "Manual",
+    "command" : "Command",
+    "product" : "Products",
+    "addNewProduct" : "Add product",
+    "datePurchase" : "Purchase date",
+    "submit" : "Submit",
+    "currency" : "Currency",
+    "back" : "Back"
+}

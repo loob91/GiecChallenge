@@ -1,0 +1,17 @@
+{
+    "newGroup" : "Nouveau groupe",
+    "group" : "Groupe",
+    "groupSuccess" : "Groupe ajouté",
+    "addNewTranslation" : "Ajouter une traduction",
+    "newSubGroup" : "Nouveau sous groupe",
+    "subGroup" : "Sous groupe",
+    "subGroupSuccess" : "Sous groupe ajouté",
+    "newProduct" : "Nouveau produit",
+    "product" : "Produit",
+    "productSuccess" : "Produit ajouté",
+    "language" : "Langue",
+    "CO2Emissions" : "Emissions de CO2",
+    "waterEmissions" : "Emissions d'eau",
+    "amortization" : "Amortissement (en mois)",
+    "submit" : "Valider"
+}

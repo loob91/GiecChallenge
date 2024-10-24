@@ -1,0 +1,12 @@
+{
+    "title" : "Créer une nouvelle liste d'achat",
+    "typeOfPurchase" : "Type de liste d'achat",
+    "manual" : "Manuel",
+    "command" : "Commande",
+    "product" : "Produits",
+    "addNewProduct" : "Ajouter un produit",
+    "datePurchase" : "Date d'achat",
+    "submit" : "Valider",
+    "currency" : "Devise",
+    "back" : "Retour"
+}

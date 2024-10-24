@@ -1,0 +1,69 @@
+version: '3.4'
+
+networks:
+  dev:
+    driver: bridge 
+
+services:
+  giecchallenge_backend:
+    image: ${REGISTRY:-giecchalleng-backend}/giecchallenge-backend.api:${PLATFORM:-linux}-${TAG:-latest}
+    depends_on:
+      - "giecchallenge_db"
+    container_name: giecchallenge-backend
+    ports:
+      - "17021:443"
+      - "17020:80"
+    build:
+      context: .
+      dockerfile: ./backend/GiecChallenge/Dockerfile
+    environment:
+      - ConnectionStrings__PostgreSQL=host=giecchallenge_db;User ID=maxime;Password=<POSTGREDB_PASSWORD>;Port=14432;Database=GiecChallenge;Pooling=true;
+      - JWT__ValidAudience=https://giecchallenge-backend.maximeboulay.com
+      - JWT__ValidIssuer=https://giecchallenge-backend.maximeboulay.com
+      - JWT__Secret=<JWT__Secret>
+      - PasswordHash=<HASH>
+      - AllowedHosts=*
+      - OriginAllowed=https://giecchallenge.maximeboulay.com
+    networks:
+      - dev
+
+  giecchallenge_frontend:
+    image: ${REGISTRY:-giecchalleng-frontend}/giecchallenge-frontend.api:${PLATFORM:-linux}-${TAG:-latest}
+    depends_on:
+      - "giecchallenge_backend"
+    stdin_open: true
+    tty: true
+    container_name: giecchallenge-frontend
+    ports:
+      - "13000:3000"
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+      args:
+        REACT_APP_API_URL: https://giecchallenge-backend.maximeboulay.com
+    environment:
+      - API_URL
+    networks:
+      - dev
+
+  giecchallenge_db:
+    image: postgres:latest
+    container_name: giecchallenge_db
+    environment:
+      - POSTGRES_USER=maxime
+      - POSTGRES_PASSWORD=<POSTGREDB_PASSWORD>
+      - POSTGRES_DB=GiecChallenge
+    expose:
+      - "14432"
+    ports:
+      - "14432:14432"
+    command: -p 14432
+    restart: always
+    volumes:
+      - customer_data:/var/lib/postgresql/data/ 
+      - ./backend/GiecChallenge/Data/giecchallenge.sql :/docker-entrypoint-initdb.d/seed.sql
+    networks:
+      - dev
+
+volumes:
+  customer_data:

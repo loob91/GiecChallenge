@@ -1,0 +1,11 @@
+{
+    "title" : "Purchase details",
+    "addNewProduct" : "Add product",
+    "product" : "Products",
+    "CO2Cost" : "CO2 cost",
+    "WaterCost" : "Water cost",
+    "datePurchase" : "Purchase date",
+    "submit" : "Submit",
+    "currency" : "Currency",
+    "back" : "Back"
+}
