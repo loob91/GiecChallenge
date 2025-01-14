@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: ./backend/GiecChallenge/Dockerfile
     environment:
-      - ConnectionStrings__PostgreSQL=host=giecchallenge_db;User ID=maxime;Password=<POSTGREDB_PASSWORD>;Port=14432;Database=GiecChallenge;Pooling=true;
+      - ConnectionStrings__PostgreSQL=host=giecchallenge_db;User ID=<POSTGREDB_USER>;Password=<POSTGREDB_PASSWORD>;Port=14432;Database=GiecChallenge;Pooling=true;
       - JWT__ValidAudience=https://giecchallenge-backend.maximeboulay.com
       - JWT__ValidIssuer=https://giecchallenge-backend.maximeboulay.com
       - JWT__Secret=<JWT__Secret>
@@ -50,7 +50,7 @@ services:
     image: postgres:latest
     container_name: giecchallenge_db
     environment:
-      - POSTGRES_USER=maxime
+      - POSTGRES_USER=<POSTGREDB_USER>
       - POSTGRES_PASSWORD=<POSTGREDB_PASSWORD>
       - POSTGRES_DB=GiecChallenge
     expose:
